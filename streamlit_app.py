@@ -25,11 +25,11 @@ def run_snow_animation():
 # Function to get the name from query parameters
 def get_person_name():
     query_params = st.experimental_get_query_params()
-    return query_params.get("name", ["Friend"])[0]
+    return query_params.get("name", ["Parceros"])[0]
 
 
 # Page configuration
-st.set_page_config(page_title="Happy Holidays", page_icon="🎄")
+st.set_page_config(page_title="Feliz Navidad", page_icon="🎄")
 
 # Run snowfall animation
 run_snow_animation()
@@ -40,16 +40,36 @@ with open(CSS_FILE) as f:
 
 # Display header with personalized name
 PERSON_NAME = get_person_name()
-st.header(f"Happy Holidays, {PERSON_NAME}! 🎄", anchor=False)
+st.header(f"Feliz Navidad , {PERSON_NAME}! 🎄", anchor=False)
 
 # Display the Lottie animation
-lottie_animation = load_lottie_animation(LOTTIE_ANIMATION)
-st_lottie(lottie_animation, key="lottie-holiday", height=300)
+#lottie_animation = load_lottie_animation(LOTTIE_ANIMATION)
+#st_lottie(lottie_animation, key="lottie-holiday", height=300)
+
+
 
 # Personalized holiday message
 st.markdown(
-    f"Dear {PERSON_NAME}, wishing you a wonderful holiday season filled with joy and peace. 🌟"
+    f"Queridos {PERSON_NAME}, los quiero mucho un abrazo gigante!!. 👩🏽‍🦲"
+    f":red[Camilo Franco]"
 )
+
+with st.container():
+
+    
+    col1, col2 = st.columns([2,2],gap='small')
+
+    
+    with col1:
+        
+        lottie_animation = load_lottie_animation(LOTTIE_ANIMATION)
+        st_lottie(lottie_animation, key="lottie-holiday", height=300)
+      
+    
+    
+    with col2:        
+        st.image('parceros.jpeg', caption='Parceritos del Alma')
+        
 
 
 
